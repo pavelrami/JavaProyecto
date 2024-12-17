@@ -1,0 +1,341 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 29-11-2024 a las 05:23:10
+-- Versión del servidor: 10.4.32-MariaDB
+-- Versión de PHP: 8.0.30
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de datos: `sistemaventa`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `id` int(11) NOT NULL,
+  `rfc` int(20) NOT NULL,
+  `nombre` varchar(150) NOT NULL,
+  `telefono` int(15) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `clientes` (id, rfc, nombre, telefono, direccion, fecha) VALUES
+(1, 123456789, 'Juan Pérez', 5551111111, 'Calle Falsa 123', NOW()),
+(2, 987654321, 'María López', 5552222222, 'Avenida Siempre Viva 742', NOW()),
+(3, 112233445, 'Carlos García', 5553333333, 'Boulevard Central 567', NOW()),
+(4, 223344556, 'Ana Martínez', 5554444444, 'Calle Secundaria 456', NOW()),
+(5, 334455667, 'Pedro Sánchez', 5555555555, 'Pasaje Escondido 890', NOW()),
+(6, 445566778, 'Laura Gómez', 5556666666, 'Camino Real 100', NOW()),
+(7, 556677889, 'Luis Ramírez', 5557777777, 'Carrera Central 200', NOW()),
+(8, 667788990, 'Sofía Torres', 5558888888, 'Circuito Norte 300', NOW()),
+(9, 778899001, 'Miguel Díaz', 5559999999, 'Callejón del Arte 400', NOW()),
+(10, 889900112, 'Elena Ruiz', 5551231234, 'Ruta del Sol 500', NOW()),
+(11, 990011223, 'David Herrera', 5552342345, 'Paseo del Parque 600', NOW()),
+(12, 100122334, 'Patricia Vega', 5553453456, 'Jardines del Lago 700', NOW()),
+(13, 111233445, 'Roberto Núñez', 5554564567, 'Avenida Libertad 800', NOW()),
+(14, 122344556, 'Gabriela Cruz', 5555675678, 'Vía del Tren 900', NOW()),
+(15, 133455667, 'Fernando Morales', 5556786789, 'Camino del Río 1000', NOW()),
+(16, 144566778, 'Claudia Reyes', 5557897890, 'Calle del Bosque 1100', NOW()),
+(17, 155677889, 'Jorge Medina', 5558908901, 'Avenida del Mar 1200', NOW()),
+(18, 166788990, 'Natalia Pérez', 5559019012, 'Paseo del Río 1300', NOW()),
+(19, 177899001, 'Raúl Torres', 5550120123, 'Camino del Viento 1400', NOW()),
+(20, 188900112, 'Isabel Ramírez', 5551234560, 'Ruta del Sol 1500', NOW());
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `configuracion`
+--
+
+CREATE TABLE `configuracion` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `rfc` varchar(20) NOT NULL,
+  `telefono` int(15) NOT NULL,
+  `direccion` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `configuracion` (id, nombre, rfc, telefono, direccion) VALUES
+(1, 'Tienda Vinilos A', 'RFC001', 5551111111, 'Calle Principal 1'),
+(2, 'Tienda Vinilos B', 'RFC002', 5552222222, 'Calle Principal 2'),
+(3, 'Tienda Vinilos C', 'RFC003', 5553333333, 'Calle Principal 3'),
+(4, 'Tienda Vinilos D', 'RFC004', 5554444444, 'Calle Principal 4'),
+(5, 'Tienda Vinilos E', 'RFC005', 5555555555, 'Calle Principal 5'),
+(6, 'Tienda Vinilos F', 'RFC006', 5556666666, 'Calle Principal 6'),
+(7, 'Tienda Vinilos G', 'RFC007', 5557777777, 'Calle Principal 7'),
+(8, 'Tienda Vinilos H', 'RFC008', 5558888888, 'Calle Principal 8'),
+(9, 'Tienda Vinilos I', 'RFC009', 5559999999, 'Calle Principal 9'),
+(10, 'Tienda Vinilos J', 'RFC010', 5551231234, 'Calle Principal 10'),
+(11, 'Tienda Vinilos K', 'RFC011', 5552342345, 'Calle Principal 11'),
+(12, 'Tienda Vinilos L', 'RFC012', 5553453456, 'Calle Principal 12'),
+(13, 'Tienda Vinilos M', 'RFC013', 5554564567, 'Calle Principal 13'),
+(14, 'Tienda Vinilos N', 'RFC014', 5555675678, 'Calle Principal 14'),
+(15, 'Tienda Vinilos O', 'RFC015', 5556786789, 'Calle Principal 15'),
+(16, 'Tienda Vinilos P', 'RFC016', 5557897890, 'Calle Principal 16'),
+(17, 'Tienda Vinilos Q', 'RFC017', 5558908901, 'Calle Principal 17'),
+(18, 'Tienda Vinilos R', 'RFC018', 5559019012, 'Calle Principal 18'),
+(19, 'Tienda Vinilos S', 'RFC019', 5550120123, 'Calle Principal 19'),
+(20, 'Tienda Vinilos T', 'RFC020', 5551234560, 'Calle Principal 20');
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `detalle`
+--
+
+CREATE TABLE `detalle` (
+  `id` int(11) NOT NULL,
+  `cod_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  `precio` decimal(10,2) NOT NULL,
+  `id_venta` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `detalle` (id, cod_producto, cantidad, precio, id_venta) VALUES
+(1, 1, 2, 60.00, 1),
+(2, 2, 1, 28.00, 2),
+(3, 3, 3, 105.00, 3),
+(4, 4, 1, 40.00, 4),
+(5, 5, 4, 100.00, 5),
+(6, 6, 2, 60.00, 6),
+(7, 7, 1, 50.00, 7),
+(8, 8, 3, 99.00, 8),
+(9, 9, 2, 90.00, 9),
+(10, 10, 1, 38.00, 10),
+(11, 11, 2, 54.00, 11),
+(12, 12, 3, 87.00, 12),
+(13, 13, 1, 55.00, 13),
+(14, 14, 2, 72.00, 14),
+(15, 15, 4, 128.00, 15),
+(16, 16, 1, 28.00, 16),
+(17, 17, 2, 68.00, 17),
+(18, 18, 3, 117.00, 18),
+(19, 19, 1, 31.00, 19),
+(20, 20, 2, 74.00, 20);
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` int(11) NOT NULL,
+  `codigo` varchar(30) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `proveedor` varchar(100) NOT NULL,
+  `stock` int(11) NOT NULL,
+  `precio` decimal(10,0) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `productos` (id, codigo, nombre, proveedor, stock, precio, fecha) VALUES
+(1, 'LP001', 'Dark Side of the Moon', 'EMI', 10, 30, NOW()),
+(2, 'LP002', 'Abbey Road', 'Apple Records', 8, 28, NOW()),
+(3, 'LP003', 'Led Zeppelin IV', 'Atlantic Records', 15, 35, NOW()),
+(4, 'LP004', 'The Wall', 'Columbia Records', 12, 40, NOW()),
+(5, 'LP005', 'Rumours', 'Warner Bros Records', 20, 25, NOW()),
+(6, 'LP006', 'Hotel California', 'Asylum Records', 18, 30, NOW()),
+(7, 'LP007', 'Thriller', 'Epic Records', 25, 50, NOW()),
+(8, 'LP008', 'Back in Black', 'Atlantic Records', 22, 33, NOW()),
+(9, 'LP009', 'The Beatles (White Album)', 'Apple Records', 14, 45, NOW()),
+(10, 'LP010', 'Wish You Were Here', 'Harvest Records', 11, 38, NOW()),
+(11, 'LP011', 'Born to Run', 'Columbia Records', 16, 27, NOW()),
+(12, 'LP012', 'Sticky Fingers', 'Rolling Stones Records', 9, 29, NOW()),
+(13, 'LP013', 'A Night at the Opera', 'EMI', 7, 55, NOW()),
+(14, 'LP014', 'Ziggy Stardust', 'RCA Records', 13, 36, NOW()),
+(15, 'LP015', 'Kind of Blue', 'Columbia Records', 17, 32, NOW()),
+(16, 'LP016', 'Pet Sounds', 'Capitol Records', 20, 28, NOW()),
+(17, 'LP017', 'London Calling', 'CBS Records', 15, 34, NOW()),
+(18, 'LP018', 'Blonde on Blonde', 'Columbia Records', 12, 39, NOW()),
+(19, 'LP019', 'Nevermind', 'DGC Records', 18, 31, NOW()),
+(20, 'LP020', 'Purple Rain', 'Warner Bros Records', 14, 37, NOW());
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `proveedor`
+--
+
+CREATE TABLE `proveedor` (
+  `id` int(11) NOT NULL,
+  `rfc` int(20) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `telefono` int(15) NOT NULL,
+  `direccion` varchar(200) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `proveedor` (id, rfc, nombre, telefono, direccion, fecha) VALUES
+(1, 100000001, 'EMI Records', 5551111111, 'Calle Música 101', NOW()),
+(2, 100000002, 'Apple Records', 5552222222, 'Avenida Melodía 202', NOW()),
+(3, 100000003, 'Atlantic Records', 5553333333, 'Boulevard Armonía 303', NOW()),
+(4, 100000004, 'Columbia Records', 5554444444, 'Calle Riffs 404', NOW()),
+(5, 100000005, 'Warner Bros Records', 5555555555, 'Avenida Rock 505', NOW()),
+(6, 100000006, 'Asylum Records', 5556666666, 'Pasaje Clásicos 606', NOW()),
+(7, 100000007, 'Epic Records', 5557777777, 'Calle Pop 707', NOW()),
+(8, 100000008, 'Rolling Stones Records', 5558888888, 'Circuito Hits 808', NOW()),
+(9, 100000009, 'Harvest Records', 5559999999, 'Camino del Álbum 909', NOW()),
+(10, 100000010, 'RCA Records', 5551231234, 'Carrera del Sonido 1001', NOW()),
+(11, 100000011, 'Polydor Records', 5552342345, 'Vía Clásica 1102', NOW()),
+(12, 100000012, 'Reprise Records', 5553453456, 'Avenida Música 1203', NOW()),
+(13, 100000013, 'Island Records', 5554564567, 'Boulevard Tropical 1304', NOW()),
+(14, 100000014, 'Virgin Records', 5555675678, 'Paseo del Ritmo 1405', NOW()),
+(15, 100000015, 'Motown Records', 5556786789, 'Calle Soul 1506', NOW()),
+(16, 100000016, 'Capitol Records', 5557897890, 'Avenida Melodía 1607', NOW()),
+(17, 100000017, 'CBS Records', 5558908901, 'Pasaje de las Estrellas 1708', NOW()),
+(18, 100000018, 'DGC Records', 5559019012, 'Camino del Grunge 1809', NOW()),
+(19, 100000019, 'Geffen Records', 5550120123, 'Calle del Rock 1900', NOW()),
+(20, 100000020, 'Chess Records', 5551234560, 'Avenida del Blues 2001', NOW());
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `correo` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `usuarios` (id, nombre, correo, pass) VALUES
+(1, 'admin', 'admin@tiendavinilos.com', 'admin123'),
+(2, 'jlopez', 'jlopez@tiendavinilos.com', 'password1'),
+(3, 'cmartinez', 'cmartinez@tiendavinilos.com', 'pass2023'),
+(4, 'aguerrero', 'aguerrero@tiendavinilos.com', 'segura456'),
+(5, 'jperez', 'jperez@tiendavinilos.com', 'clave789'),
+(6, 'mmorales', 'mmorales@tiendavinilos.com', 'abc123'),
+(7, 'aluna', 'aluna@tiendavinilos.com', 'luna321'),
+(8, 'bgomez', 'bgomez@tiendavinilos.com', 'secure999'),
+(9, 'jcastro', 'jcastro@tiendavinilos.com', 'qwerty123'),
+(10, 'vruiz', 'vruiz@tiendavinilos.com', 'pass4567'),
+(11, 'pparker', 'pparker@tiendavinilos.com', 'spidey007'),
+(12, 'jwatson', 'jwatson@tiendavinilos.com', 'watson789'),
+(13, 'kking', 'kking@tiendavinilos.com', 'kingpass'),
+(14, 'sbrown', 'sbrown@tiendavinilos.com', 'brownie123'),
+(15, 'rblack', 'rblack@tiendavinilos.com', 'blackcat321'),
+(16, 'gwhite', 'gwhite@tiendavinilos.com', 'whitehorse456'),
+(17, 'cmiller', 'cmiller@tiendavinilos.com', 'miller456'),
+(18, 'lwilliams', 'lwilliams@tiendavinilos.com', 'willpass123'),
+(19, 'gclark', 'gclark@tiendavinilos.com', 'clarkkent007'),
+(20, 'bkent', 'bkent@tiendavinilos.com', 'kentfamily');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `ventas`
+--
+
+CREATE TABLE `ventas` (
+  `id` int(11) NOT NULL,
+  `cliente` varchar(100) NOT NULL,
+  `vendedor` varchar(100) NOT NULL,
+  `total` decimal(10,2) NOT NULL,
+  `fecha` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Índices para tablas volcadas
+--
+
+--
+-- Indices de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `configuracion`
+--
+ALTER TABLE `configuracion`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `detalle`
+--
+ALTER TABLE `detalle`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT de las tablas volcadas
+--
+
+--
+-- AUTO_INCREMENT de la tabla `clientes`
+--
+ALTER TABLE `clientes`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `configuracion`
+--
+ALTER TABLE `configuracion`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `detalle`
+--
+ALTER TABLE `detalle`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `proveedor`
+--
+ALTER TABLE `proveedor`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `ventas`
+--
+ALTER TABLE `ventas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
