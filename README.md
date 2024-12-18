@@ -9,9 +9,12 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
 
 ### **Gestión de Usuarios y Roles**
 
+![image](https://github.com/user-attachments/assets/7630a21a-46dc-4c06-bd55-87302db47441)
 - **Roles disponibles**: Administrador y Cajero.
 - **Validación de permisos** para cada rol, asegurando accesos restringidos a las funciones correspondientes.
 - **Inicio de sesión** con autenticación basada en correo electrónico y contraseña.
+
+![image](https://github.com/user-attachments/assets/5e3a2a79-0c27-4b82-82d7-e0e859f614c7)
 
 ### **Gestión de Inventario de Discos**
 
@@ -20,11 +23,14 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
   - Modificar detalles de los discos (nombre, código, stock, precio, género).
   - Eliminar discos existentes.
   - Controlar el stock y la disponibilidad de los discos.
+  ![image](https://github.com/user-attachments/assets/fd24f1c1-30e9-4006-b34f-55aa5712bf76)
+
 - **Validación de entradas** en los formularios:
   - Código: Solo letras y números.
   - Nombre: Solo letras.
   - Stock: Solo números enteros.
   - Precio: Números enteros o decimales.
+  ![image](https://github.com/user-attachments/assets/458660ef-20f0-4716-a001-6264293825a2)
 
 ### **Gestión de Clientes**
 
@@ -32,6 +38,8 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
   - Agregar nuevos clientes.
   - Modificar datos de los clientes.
   - Eliminar clientes.
+    ![image](https://github.com/user-attachments/assets/5023fd39-63d7-414f-a25e-7769f1a0426f)
+    
 - **Validaciones de datos**:
   - RFC: Letras y números.
   - Nombre: Solo letras.
@@ -51,6 +59,8 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
 - **Actualizar el stock automáticamente** después de cada venta.
 - **Eliminar ventas** y recalcular el total de la venta si se eliminan productos.
 - **Control de duplicados** en el código de productos.
+![image](https://github.com/user-attachments/assets/f882301f-7507-455d-880e-026d3761a1e0)
+
 
 ### **Interfaz de Usuario**
 
@@ -65,6 +75,8 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
   - `proveedores`: Información de los proveedores.
   - `productos`: Inventario de discos.
   - `ventas`: Registro de ventas realizadas.
+    ![image](https://github.com/user-attachments/assets/98d9bd72-265c-44c1-914e-fea5e81a53a8)
+    
 - **Transacciones seguras** para garantizar la integridad de los datos.
 
 ---
@@ -86,6 +98,7 @@ Este proyecto es un **Sistema de Gestión de Tienda de Discos** desarrollado en 
 
 2. **Abrir el proyecto en NetBeans**:
    - Ve a `File > Open Project` y selecciona la carpeta del proyecto.
+![image](https://github.com/user-attachments/assets/7875f854-5051-43c9-bd34-978e81f14ab8)
 
 3. **Configurar la base de datos XAMPP**:
    - Crear una base de datos llamada `tienda_discos`.
@@ -221,7 +234,7 @@ La base de datos está compuesta por las siguientes tablas:
 Esta es la **pantalla de inicio de sesión** para el sistema de gestión de la tienda de discos .
 
 ![Inicio de sesión para el administrador
-(https://photos.app.goo.gl/rUgxLth9AYpRUEin9)
+![image](https://github.com/user-attachments/assets/7e4d417a-7744-4018-be86-82ef28e73a5e)
 
 ### 📌 **Descripción de la Interfaz**
 
@@ -278,7 +291,7 @@ Esta sección de la aplicación corresponde a la **gestión de ventas** en la ti
 
 ### Descripción Visual
 ![Cajero]
-(https://photos.app.goo.gl/JAKz8bAJJioMW3jj9)
+![image](https://github.com/user-attachments/assets/86c9ac33-e0be-4025-b3e8-16f666db784f)
 
 
 ---
@@ -346,7 +359,7 @@ Esta sección de la aplicación corresponde a la **gestión de clientes** en la 
 ### Descripción Visual
 
 ![Administración de los clientes
-(https://photos.app.goo.gl/fAEkcXUbPmDKTSV26)
+![image](https://github.com/user-attachments/assets/80414021-507f-4372-8259-811da0c270ae)
 
 ---
 
@@ -398,7 +411,7 @@ La interfaz de gestión de proveedores permite administrar los datos de proveedo
 ### Descripción Visual
 
 ![Proveedores
-(https://photos.app.goo.gl/Pmqf19key9tafy2q6)
+![image](https://github.com/user-attachments/assets/a12e74b9-7394-48e3-8c59-b91e8d2405b3)
 ---
 
 ### Componentes de la Interfaz
@@ -555,7 +568,7 @@ La interfaz de gestión de ventas facilita el seguimiento y control de las trans
 ### Descripción Visual
 
 ![Historial de las ventas
-(https://photos.app.goo.gl/JaM9CcbrGhEv9eAg8)
+![image](https://github.com/user-attachments/assets/821e3ae7-174b-49f7-a007-072286ff6589)
 
 ---
 
@@ -616,7 +629,7 @@ Este PDF es generado automáticamente por el sistema de gestión de ventas de **
 ### Ejemplo Visual del PDF Generado
 
 ![PDF
-(https://photos.app.goo.gl/33Yvjz7XNnPCHuTa7)
+![image](https://github.com/user-attachments/assets/48794c46-8b26-40d2-be41-765b6ab85586)
 
 ---
 
